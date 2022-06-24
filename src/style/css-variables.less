@@ -1,0 +1,47 @@
+@import './var.less';
+
+:root {
+  // color
+  --mx-white-color-1: @white-color-1;
+  --mx-white-color-2: @white-color-2;
+  --mx-white-color-3: @white-color-3;
+  --mx-black-color-1: @black-color-1;
+  --mx-black-color-2: @black-color-2;
+  --mx-black-color-3: @black-color-2;
+  --mx-red-color-1: @red-color-1;
+  --mx-red-color-2: @red-color-2;
+  --mx-red-color-3: @red-color-3;
+  --mx-red-color-4: @red-color-4;
+  --mx-orange-color-1: @orange-color-1;
+  --mx-orange-color-2: @orange-color-2;
+  --mx-orange-color-3: @orange-color-3;
+  --mx-gray-color-1: @gray-color-1;
+  --mx-gray-color-2: @gray-color-2;
+  --mx-gray-color-3: @gray-color-3;
+  --mx-gray-color-4: @gray-color-4;
+  --mx-gray-color-5: @gray-color-5;
+  --mx-gray-color-6: @gray-color-6;
+  --mx-pink-color-1: @pink-color-1;
+  --mx-pink-color-2: @pink-color-2;
+  --mx-pink-color-3: @pink-color-3;
+  --mx-overlay-background-color: rgba(@black-color-1, 0.7);
+  --mx-base-font-family: @base-font-family;
+
+  // gradient
+  --mx-gradient-primary-1: linear-gradient(
+    270deg,
+    var(--mx-orange-color-1) 0%,
+    var(--mx-red-color-2) 100%
+  );
+  --mx-gradient-primary-2: linear-gradient(
+    -270deg,
+    var(--mx-orange-color-3) 0%,
+    var(--mx-red-color-2) 100%
+  );
+
+  // Animation
+  --mx-animation-duration-base: @animation-duration-base;
+  --mx-animation-duration-fast: @animation-duration-fast;
+  --mx-animation-timing-function-enter: @animation-timing-function-enter;
+  --mx-animation-timing-function-leave: @animation-timing-function-leave;
+}

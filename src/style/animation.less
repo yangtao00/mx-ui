@@ -1,0 +1,139 @@
+@import './var';
+
+@keyframes mx-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes mx-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes mx-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes mx-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes mx-slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes mx-slide-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes mx-slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes mx-slide-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes mx-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mx-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mx-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mx-fade {
+  &-enter-active {
+    animation: var(--mx-animation-duration-base) mx-fade-in both
+      var(--mx-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: var(--mx-animation-duration-base) mx-fade-out both
+      var(--mx-animation-timing-function-leave);
+  }
+}
+
+.mx-slide-up {
+  &-enter-active {
+    animation: mx-slide-up-enter var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: mx-slide-up-leave var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-leave);
+  }
+}
+
+.mx-slide-down {
+  &-enter-active {
+    animation: mx-slide-down-enter var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: mx-slide-down-leave var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-leave);
+  }
+}
+
+.mx-slide-left {
+  &-enter-active {
+    animation: mx-slide-left-enter var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: mx-slide-left-leave var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-leave);
+  }
+}
+
+.mx-slide-right {
+  &-enter-active {
+    animation: mx-slide-right-enter var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: mx-slide-right-leave var(--mx-animation-duration-base) both
+      var(--mx-animation-timing-function-leave);
+  }
+}
