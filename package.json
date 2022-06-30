@@ -15,9 +15,12 @@
     "test": "vant-cli test",
     "lint": "vant-cli lint",
     "build": "vant-cli build",
-    "release": "release-it",
+    "release": "vant-cli release",
     "prepare": "husky install",
     "build-site": "vant-cli build-site"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "lint-staged": {
     "*.md": "prettier --write",
