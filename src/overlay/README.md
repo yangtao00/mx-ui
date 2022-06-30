@@ -10,7 +10,7 @@
 
 ```js
 import { createApp } from 'vue';
-import { Overlay } from 'vant';
+import { Overlay } from 'akc-ui';
 
 const app = createApp();
 app.use(Overlay);
@@ -21,8 +21,8 @@ app.use(Overlay);
 ### 基础用法
 
 ```html
-<van-button type="primary" text="显示遮罩层" @click="show = true" />
-<van-overlay :show="show" @click="show = false" />
+<mx-button type="primary" text="显示遮罩层" @click="show = true" />
+<mx-overlay :show="show" @click="show = false" />
 ```
 
 ```js
@@ -41,11 +41,11 @@ export default {
 通过默认插槽可以在遮罩层上嵌入任意内容。
 
 ```html
-<van-overlay :show="show" @click="show = false">
+<mx-overlay :show="show" @click="show = false">
   <div class="wrapper" @click.stop>
     <div class="block" />
   </div>
-</van-overlay>
+</mx-overlay>
 
 <style>
   .wrapper {
@@ -67,15 +67,15 @@ export default {
 
 ### Props
 
-| 参数                 | 说明                                             | 类型               | 默认值  |
-| -------------------- | ------------------------------------------------ | ------------------ | ------- |
-| show                 | 是否展示遮罩层                                   | _boolean_          | `false` |
-| z-index              | z-index 层级                                     | _number \| string_ | `1`     |
-| duration             | 动画时长，单位秒，设置为 0 可以禁用动画          | _number \| string_ | `0.3`   |
-| class-name           | 自定义类名                                       | _string_           | -       |
-| custom-style         | 自定义样式                                       | _object_           | -       |
-| lock-scroll          | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_          | `true`  |
-| lazy-render `v3.4.2` | 是否在显示时才渲染节点                           | _boolean_          | `true`  |
+| 参数         | 说明                                             | 类型               | 默认值  |
+| ------------ | ------------------------------------------------ | ------------------ | ------- |
+| show         | 是否展示遮罩层                                   | _boolean_          | `false` |
+| z-index      | z-index 层级                                     | _number \| string_ | `1`     |
+| duration     | 动画时长，单位秒，设置为 0 可以禁用动画          | _number \| string_ | `0.3`   |
+| class-name   | 自定义类名                                       | _string_           | -       |
+| custom-style | 自定义样式                                       | _object_           | -       |
+| lock-scroll  | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_          | `true`  |
+| lazy-render  | 是否在显示时才渲染节点                           | _boolean_          | `true`  |
 
 ### Events
 
@@ -96,14 +96,3 @@ export default {
 ```ts
 import type { OverlayProps } from 'vant';
 ```
-
-## 主题定制
-
-### 样式变量
-
-组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
-
-| 名称                           | 默认值               | 描述 |
-| ------------------------------ | -------------------- | ---- |
-| --van-overlay-z-index          | _1_                  | -    |
-| --van-overlay-background-color | _rgba(0, 0, 0, 0.7)_ | -    |

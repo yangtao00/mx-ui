@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "extends": [
+    "@vant"
+  ],
+  "rules": {
+    "camelcase": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/no-duplicates": "off",
+    "import/first": "off",
+    "vue/no-ref-as-operand": "off",
+    "quotes": ["warn", "single"]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*"],
+      "excludedFiles": ["**/test/*", "**/demo/*"],
+      "rules": {
+        // since we target ES2015 for baseline support, we need to forbid object
+        // rest spread usage (both assign and destructure)
+        "no-restricted-syntax": [
+          "error",
+          "ObjectExpression > SpreadElement",
+          "ObjectPattern > RestElement"
+        ]
+      }
+    }
+  ]
+}

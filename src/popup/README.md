@@ -10,7 +10,7 @@
 
 ```js
 import { createApp } from 'vue';
-import { Popup } from 'vant';
+import { Popup } from 'akc-ui';
 
 const app = createApp();
 app.use(Popup);
@@ -23,8 +23,8 @@ app.use(Popup);
 通过 `v-model:show` 控制弹出层是否展示。
 
 ```html
-<van-cell is-link @click="showPopup">展示弹出层</van-cell>
-<van-popup v-model:show="show">内容</van-popup>
+<div>展示弹出层</div>
+<mx-popup v-model:show="show">内容</mx-popup>
 ```
 
 ```js
@@ -49,7 +49,7 @@ export default {
 通过 `position` 属性设置弹出位置，默认居中弹出，可以设置为 `top`、`bottom`、`left`、`right`。
 
 ```html
-<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
+<mx-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
 ```
 
 ### 关闭图标
@@ -57,14 +57,14 @@ export default {
 设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用 `close-icon-position` 属性可以自定义图标位置。
 
 ```html
-<van-popup
+<mx-popup
   v-model:show="show"
   closeable
   position="bottom"
   :style="{ height: '30%' }"
 />
 <!-- 自定义图标 -->
-<van-popup
+<mx-popup
   v-model:show="show"
   closeable
   close-icon="close"
@@ -72,7 +72,7 @@ export default {
   :style="{ height: '30%' }"
 />
 <!-- 图标位置 -->
-<van-popup
+<mx-popup
   v-model:show="show"
   closeable
   close-icon-position="top-left"
@@ -86,7 +86,7 @@ export default {
 设置 `round` 属性后，弹窗会根据弹出位置添加不同的圆角样式。
 
 ```html
-<van-popup
+<mx-popup
   v-model:show="show"
   round
   position="bottom"
@@ -100,10 +100,10 @@ export default {
 
 ```html
 <!-- 挂载到 body 节点下 -->
-<van-popup v-model:show="show" teleport="body" />
+<mx-popup v-model:show="show" teleport="body" />
 
 <!-- 挂载到 #app 节点下 -->
-<van-popup v-model:show="show" teleport="#app" />
+<mx-popup v-model:show="show" teleport="#app" />
 ```
 
 ## API
@@ -127,7 +127,7 @@ export default {
 | close-icon             | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)                                      | _string_                                            | `cross`     |
 | close-icon-position    | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right`                                               | _string_                                            | `top-right` |
 | before-close `v3.1.4`  | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise                                                     | _(action: string) => boolean \| Promise\<boolean\>_ | -           |
-| icon-prefix `v3.0.18`  | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props)                                        | _string_                                            | `van-icon`  |
+| icon-prefix `v3.0.18`  | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props)                                        | _string_                                            | `mx-icon`   |
 | transition             | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性   | _string_                                            | -           |
 | transition-appear      | 是否在初始渲染时启用过渡动画                                                                                    | _boolean_                                           | `false`     |
 | teleport               | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_                                 | -           |
@@ -172,12 +172,12 @@ import type {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                            | 默认值                                         | 描述 |
-| ------------------------------- | ---------------------------------------------- | ---- |
-| --van-popup-background-color    | _var(--van-background-color-light)_            | -    |
-| --van-popup-transition          | _transform var(--van-animation-duration-base)_ | -    |
-| --van-popup-round-border-radius | _16px_                                         | -    |
-| --van-popup-close-icon-size     | _22px_                                         | -    |
-| --van-popup-close-icon-color    | _var(--van-gray-5)_                            | -    |
-| --van-popup-close-icon-margin   | _16px_                                         | -    |
-| --van-popup-close-icon-z-index  | _1_                                            | -    |
+| 名称                           | 默认值                                        | 描述 |
+| ------------------------------ | --------------------------------------------- | ---- |
+| --mx-popup-background-color    | _var(--mx-background-color-light)_            | -    |
+| --mx-popup-transition          | _transform var(--mx-animation-duration-base)_ | -    |
+| --mx-popup-round-border-radius | _16px_                                        | -    |
+| --mx-popup-close-icon-size     | _22px_                                        | -    |
+| --mx-popup-close-icon-color    | _var(--mx-gray-5)_                            | -    |
+| --mx-popup-close-icon-margin   | _16px_                                        | -    |
+| --mx-popup-close-icon-z-index  | _1_                                           | -    |

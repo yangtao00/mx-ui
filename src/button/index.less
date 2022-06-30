@@ -1,9 +1,26 @@
 @import './var.less';
 
 :root {
-  each(@buttonsVars; {
-    --mx-button-@{key}: @value;
-  });
+  --mx-button-xlarge-height: @button-xlarge-height;
+  --mx-button-xlarge-padding: @button-xlarge-padding;
+  --mx-button-xlarge-border-radius: @button-xlarge-border-radius;
+  --mx-button-xlarge-font-size: @button-xlarge-font-size;
+  --mx-button-large-height: @button-large-height;
+  --mx-button-large-padding: @button-large-padding;
+  --mx-button-large-border-radius: @button-large-border-radius;
+  --mx-button-large-font-size: @button-large-font-size;
+  --mx-button-medium-height: @button-medium-height;
+  --mx-button-medium-padding: @button-medium-padding;
+  --mx-button-medium-border-radius: @button-medium-border-radius;
+  --mx-button-medium-font-size: @button-medium-font-size;
+  --mx-button-small-height: @button-small-height;
+  --mx-button-small-padding: @button-small-padding;
+  --mx-button-small-border-radius: @button-small-border-radius;
+  --mx-button-small-font-size: @button-small-font-size;
+  --mx-button-mini-height: @button-mini-height;
+  --mx-button-mini-padding: @button-mini-padding;
+  --mx-button-mini-border-radius: @button-mini-border-radius;
+  --mx-button-mini-font-size: @button-mini-font-size;
 }
 
 .mx-button {
@@ -17,6 +34,11 @@
   cursor: pointer;
   -webkit-appearance: none;
   font-weight: 500;
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
 
   &--xlarge {
     height: var(--mx-button-xlarge-height);
@@ -64,63 +86,63 @@
   }
 
   &--primary {
-    color: var(--mx-white-color-1);
+    color: var(--mx-white-1);
     background: var(--mx-gradient-primary-1);
     &:active {
       background: var(--mx-gradient-primary-2);
     }
     &.mx-button--disabled {
       cursor: not-allowed;
-      color: var(--mx-gray-color-1);
-      background: var(--mx-gray-color-3);
+      color: var(--mx-gray-1);
+      background: var(--mx-gray-3);
     }
   }
 
   &--plain {
-    color: var(--mx-red-color-1);
-    background: var(--mx-pink-color-3);
-    border: 0.5px solid var(--mx-red-color-1);
+    color: var(--mx-red-1);
+    background: var(--mx-pink-3);
+    border: 1px solid var(--mx-red-1);
 
     &:active {
-      background: var(--mx-pink-color-2);
+      background: var(--mx-pink-2);
     }
     &.mx-button--disabled {
       cursor: not-allowed;
-      border: 0.5px solid var(--mx-pink-color-1);
-      color: var(--mx-pink-color-1);
-      background: var(--mx-pink-color-3);
+      border: 1px solid var(--mx-pink-1);
+      color: var(--mx-pink-1);
+      background: var(--mx-pink-3);
     }
   }
 
   &--default {
-    color: var(--mx-gray-color-2);
-    background: var(--mx-white-color-1);
-    border: 0.5px solid var(--mx-gray-color-1);
+    color: var(--mx-text-color-3);
+    background: var(--mx-white-1);
+    border: 1px solid var(--mx-gray-1);
 
     &:active {
-      background: var(--mx-white-color-2);
+      background: var(--mx-white-2);
     }
 
     &.mx-button--disabled {
       cursor: not-allowed;
-      border: 0.5px solid var(--mx-gray-color-1);
-      color: var(--mx-gray-color-1);
-      background: var(--mx-white-color-1);
+      border: 1px solid var(--mx-gray-1);
+      color: var(--mx-gray-1);
+      background: var(--mx-white-1);
     }
   }
 
   &--danger {
-    color: var(--mx-white-color-1);
-    background: var(--mx-red-color-3);
+    color: var(--mx-white-1);
+    background: var(--mx-red-3);
 
     &:active {
-      background: var(--mx-red-color-4);
+      background: var(--mx-red-4);
     }
 
     &.mx-button--disabled {
       cursor: not-allowed;
-      color: var(--mx-white-color-1);
-      background: var(--mx-red-color-3);
+      color: var(--mx-white-1);
+      background: var(--mx-red-3);
     }
   }
 
@@ -131,6 +153,23 @@
     height: 100%;
     &::before {
       content: ' ';
+    }
+  }
+
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      border-color: inherit;
+      border-radius: calc(var(--mx-button-border-radius) * 2);
+    }
+
+    &.mx-button--round::after {
+      border-radius: var(--mx-button-round-border-radius);
+    }
+
+    &.mx-button--square::after {
+      border-radius: 0;
     }
   }
 }

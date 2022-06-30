@@ -1,0 +1,14 @@
+@import './var.less';
+
+:root {
+  --mx-cell-group-background-color: @cell-group-background-color;
+}
+
+.mx-cell-group {
+  background: var(--mx-cell-group-background-color);
+  border-radius: var(--mx-cell-border-radius);
+  overflow: hidden;
+  .mx-cell {
+    border-radius: 0;
+  }
+}

@@ -1,19 +1,13 @@
-@import '../style/var.less';
-
-@variables: {
-  background-color: @white-color-1;
-  transition: transform @animation-duration-base;
-  round-border-radius: 16px;
-  close-icon-size: 22px;
-  close-icon-color: @gray-color-4;
-  close-icon-margin: 16px;
-  close-icon-z-index: 1;
-};
+@import './var.less';
 
 :root {
-  each(@variables; {
-    --mx-popup-@{key}: @value;
-  });
+  --mx-popup-background-color: @background-color;
+  --mx-popup-transition: @transition;
+  --mx-popup-round-border-radius: @round-border-radius;
+  --mx-popup-close-icon-size: @close-icon-size;
+  --mx-popup-close-icon-color: @close-icon-color;
+  --mx-popup-close-icon-margin: @close-icon-margin;
+  --mx-popup-close-icon-z-index: @close-icon-z-index;
 }
 
 .mx {

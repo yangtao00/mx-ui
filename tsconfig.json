@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // "outDir": ".",
     "allowJs": true,
     "noImplicitThis": true,
     "baseUrl": ".",
@@ -13,5 +14,6 @@
     "lib": ["esnext", "dom"],
     "noImplicitAny": false
   },
-  "include": ["src/**/*", "docs/**/*", "test/**/*"]
+  "include": ["src/**/*", "docs/**/*", "test/**/*"],
+  "exclude": ["node_modules"]
 }

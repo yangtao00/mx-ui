@@ -1,5 +1,5 @@
 import { defineComponent, type ExtractPropTypes, CSSProperties } from 'vue';
-import { createNamespace, makeStringProp } from '../utils';
+import { createNamespace, makeStringProp, BORDER_SURROUND } from '../utils';
 
 import { ButtonSize, ButtonType } from './types';
 
@@ -31,14 +31,12 @@ export default defineComponent({
       }
     };
 
-    const getStyle = () => {
-      const { color } = props;
-      const style: CSSProperties = {};
-      if (color) {
-        style.color = color;
-      }
-      return style;
-    };
+    // 暂不支持自定义配色
+    // const getStyle = () => {
+    //   const { color, type } = props;
+    //   const style: CSSProperties = {};
+    //   return style;
+    // };
 
     const onClick = (event: MouseEvent) => {
       if (!props.disabled) {
@@ -47,7 +45,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { type, size, disabled, round, square } = props;
+      const { type, size, block, disabled, round, square, hairline } = props;
 
       const classes = [
         bem([
@@ -57,14 +55,17 @@ export default defineComponent({
             disabled,
             round,
             square,
+            block,
+            hairline,
           },
         ]),
+        { [BORDER_SURROUND]: hairline },
       ];
 
       return (
         <button
           class={classes}
-          style={getStyle()}
+          // style={getStyle()}
           disabled={disabled}
           onClick={onClick}
         >

@@ -1,0 +1,56 @@
+@import './var.less';
+
+:root {
+  --mx-cell-background-color: @cell-background-color;
+  --mx-cell-border-radius: @cell-border-radius;
+  --mx-cell-vertical-padding: @cell-vertical-padding;
+  --mx-cell-horizontal-left-padding: @cell-horizontal-left-padding;
+  --mx-cell-horizontal-right-padding: @cell-horizontal-right-padding;
+  --mx-cell-title-font-size: @cell-title-font-size;
+  --mx-cell-title-color: @cell-title-color;
+  --mx-cell-title-line-height: @cell-title-line-height;
+  --mx-cell-label-font-size: @cell-label-font-size;
+  --mx-cell-label-color: @cell-label-color;
+  --mx-cell-label-line-height: @cell-label-line-height;
+  --mx-cell-label-margin-top: @cell-label-margin-top;
+  --mx-cell-value-font-size: @cell-value-font-size;
+  --mx-cell-value-color: @cell-value-color;
+  --mx-cell-value-line-height: @cell-value-line-height;
+  --mx-cell-item-padding: @cell-item-padding;
+}
+.mx-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  background: var(--mx-cell-background-color);
+  padding: var(--mx-cell-vertical-padding)
+    var(--mx-cell-horizontal-right-padding) var(--mx-cell-vertical-padding)
+    var(--mx-cell-horizontal-left-padding);
+  border-radius: var(--mx-cell-border-radius);
+  &__title,
+  &__value {
+    flex: 1;
+  }
+  &__value {
+    position: relative;
+    overflow: hidden;
+    color: var(--mx-cell-value-color);
+    text-align: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+
+    &--alone {
+      color: var(--mx-text-color);
+      text-align: left;
+    }
+  }
+  &__label {
+    margin-top: var(--mx-cell-label-margin-top);
+    color: var(--mx-cell-label-color);
+    font-size: var(--mx-cell-label-font-size);
+    line-height: var(--mx-cell-label-line-height);
+  }
+}

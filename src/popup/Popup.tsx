@@ -14,7 +14,6 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 
-// Utils
 import { popupSharedProps } from './shared';
 import {
   isDef,
@@ -24,17 +23,14 @@ import {
   createNamespace,
 } from '../utils';
 
-// Composables
 import { useEventListener } from '../composables/use-event-listener';
 import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
 
-// Components
 import { Overlay } from '../overlay';
 
-// Types
 import type { PopupPosition, PopupCloseIconPosition } from './types';
 
 const popupProps = extend({}, popupSharedProps, {
@@ -48,6 +44,7 @@ const popupProps = extend({}, popupSharedProps, {
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   safeAreaInsetTop: Boolean,
   safeAreaInsetBottom: Boolean,
+  backgroundColor: String,
 });
 
 export type PopupProps = ExtractPropTypes<typeof popupProps>;
@@ -58,11 +55,8 @@ let globalZIndex = 2000;
 
 export default defineComponent({
   name,
-
   inheritAttrs: false,
-
   props: popupProps,
-
   emits: [
     'open',
     'close',
@@ -87,6 +81,9 @@ export default defineComponent({
       const style: CSSProperties = {
         zIndex: zIndex.value,
       };
+      if (props.backgroundColor) {
+        style.backgroundColor = props.backgroundColor;
+      }
 
       if (isDef(props.duration)) {
         const key =
@@ -148,10 +145,10 @@ export default defineComponent({
       }
     };
 
-    const onClickCloseIcon = (event: MouseEvent) => {
-      emit('click-close-icon', event);
-      close();
-    };
+    // const onClickCloseIcon = (event: MouseEvent) => {
+    //   emit('click-close-icon', event);
+    //   close();
+    // };
 
     // const renderCloseIcon = () => {
     //   if (props.closeable) {
@@ -189,8 +186,8 @@ export default defineComponent({
               [position]: position,
             }),
             {
-              'van-safe-area-top': safeAreaInsetTop,
-              'van-safe-area-bottom': safeAreaInsetBottom,
+              'mx-safe-area-top': safeAreaInsetTop,
+              'mx-safe-area-bottom': safeAreaInsetBottom,
             },
           ]}
           onKeydown={onKeydown}
@@ -205,7 +202,7 @@ export default defineComponent({
     const renderTransition = () => {
       const { position, transition, transitionAppear } = props;
       const name =
-        position === 'center' ? 'van-fade' : `van-popup-slide-${position}`;
+        position === 'center' ? 'mx-fade' : `mx-popup-slide-${position}`;
 
       return (
         <Transition
@@ -220,7 +217,7 @@ export default defineComponent({
 
     watch(
       () => props.show,
-      (show) => {
+      show => {
         if (show && !opened) {
           open();
 
@@ -234,7 +231,7 @@ export default defineComponent({
           opened = false;
           emit('close');
         }
-      }
+      },
     );
 
     useExpose({ popupRef });

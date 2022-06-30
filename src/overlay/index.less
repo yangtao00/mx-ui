@@ -1,14 +1,8 @@
-@import '../style/var.less';
-
-@variables: {
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.7);
-};
+@import './var.less';
 
 :root {
-  each(@variables, {
-    --mx-overlay-@{key}: @value;
-  });
+  --mx-overlay-z-index: @overlay-z-index;
+  --mx-overlay-background-color: @overlay-background-color;
 }
 
 .mx-overlay {

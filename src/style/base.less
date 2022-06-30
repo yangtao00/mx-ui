@@ -2,6 +2,8 @@
 @import './css-variables.less';
 @import './normalize.less';
 @import './animation.less';
+@import './hairline.less';
+@import './ellipsis.less';
 
 .mx-safe-area-top {
   padding-top: constant(safe-area-inset-top);
@@ -11,4 +13,61 @@
 .mx-safe-area-bottom {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+[class*="mx-hairline"] {
+  &::after {
+    .hairline();
+  }
+}
+
+.mx-hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
+  &--top::after {
+    border-top-width: @border-width-base;
+  }
+
+  &--left::after {
+    border-left-width: @border-width-base;
+  }
+
+  &--right::after {
+    border-right-width: @border-width-base;
+  }
+
+  &--bottom::after {
+    border-bottom-width: @border-width-base;
+  }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: @border-width-base 0;
+    }
+  }
+
+  &--surround::after {
+    border-width: @border-width-base;
+  }
+}
+
+.mx-ellipsis {
+  .ellipsis();
+}
+
+.mx-multi-ellipsis--l2 {
+  .multi-ellipsis(2);
+}
+
+.mx-multi-ellipsis--l3 {
+  .multi-ellipsis(3);
 }

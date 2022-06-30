@@ -4,11 +4,11 @@
 
 ```bash
 # 通过 npm
-npm i mx-ui
+npm i akc-ui
 
 # 通过 yarn
-yarn add mx-ui
+yarn add akc-ui
 
 # 通过 pnpm
-pnpm add mx-ui
+pnpm add akc-ui
 ```

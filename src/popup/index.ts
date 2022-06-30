@@ -12,6 +12,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanPopup: typeof Popup;
+    MxPopup: typeof Popup;
   }
 }
