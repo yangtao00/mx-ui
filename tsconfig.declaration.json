@@ -1,9 +1,19 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": ".",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2015",
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "noImplicitThis": true
   },
   "include": ["es/**/*", "lib/**/*"],
   "exclude": ["node_modules", "**/test/**/*", "**/demo/**/*"]
