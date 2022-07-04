@@ -7,6 +7,7 @@ export default {
     site: {
       publicPath: '/akc-ui/',
     },
+    packageManager: 'pnpm',
   },
   site: {
     title: 'akc-ui',

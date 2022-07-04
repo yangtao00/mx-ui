@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    // "outDir": ".",
-    "allowJs": true,
-    "noImplicitThis": true,
     "baseUrl": ".",
     "jsx": "preserve",
     "strict": true,
@@ -12,7 +9,8 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
-    "noImplicitAny": false
+    "allowJs": true,
+    "noImplicitThis": true
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"],
   "exclude": ["node_modules"]
