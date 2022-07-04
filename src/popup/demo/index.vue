@@ -1,16 +1,16 @@
 <template>
   <demo-block card title="基础用法">
-    <div class="line" @click="showBasic = true">展示弹窗层</div>
+    <mx-cell @click="showBasic = true">展示弹窗层</mx-cell>
     <mx-popup v-model:show="showBasic" :style="{ padding: '30px 50px' }">
       内容
     </mx-popup>
   </demo-block>
 
   <demo-block card title="弹出位置">
-    <div class="line" @click="showTop = true">顶部弹出</div>
-    <div class="line" @click="showBottom = true">底部弹出</div>
-    <div class="line" @click="showLeft = true">左侧弹出</div>
-    <div class="line" @click="showRight = true">右侧弹出</div>
+    <mx-cell @click="showTop = true">顶部弹出</mx-cell>
+    <mx-cell @click="showBottom = true">底部弹出</mx-cell>
+    <mx-cell @click="showLeft = true">左侧弹出</mx-cell>
+    <mx-cell @click="showRight = true">右侧弹出</mx-cell>
     <mx-popup
       v-model:show="showTop"
       position="top"
@@ -34,9 +34,9 @@
   </demo-block>
 
   <demo-block card title="关闭图标">
-    <div class="line" @click="showCloseIcon = true">关闭图标</div>
-    <div class="line" @click="showCustomCloseIcon = true">自定义图标</div>
-    <div class="line" @click="showCustomIconPosition = true">图标位置</div>
+    <mx-cell @click="showCloseIcon = true">关闭图标</mx-cell>
+    <mx-cell @click="showCustomCloseIcon = true">自定义图标</mx-cell>
+    <mx-cell @click="showCustomIconPosition = true">图标位置</mx-cell>
     <mx-popup
       v-model:show="showCloseIcon"
       closeable
@@ -60,7 +60,7 @@
   </demo-block>
 
   <demo-block card title="圆角弹窗">
-    <div class="line" @click="showRoundCorner = true">圆角弹窗</div>
+    <mx-cell @click="showRoundCorner = true">圆角弹窗</mx-cell>
     <mx-popup
       v-model:show="showRoundCorner"
       round
@@ -70,7 +70,7 @@
   </demo-block>
 
   <demo-block card title="指定挂载节点">
-    <div class="line" @click="showGetContainer = true">指定挂载节点</div>
+    <mx-cell @click="showGetContainer = true">指定挂载节点</mx-cell>
     <mx-popup
       v-model:show="showGetContainer"
       teleport="body"
@@ -81,6 +81,7 @@
 
 <script setup lang="ts">
 import MxPopup from '..';
+import MxCell from '../../cell';
 import { ref } from 'vue';
 
 const showBasic = ref(false);
@@ -98,7 +99,6 @@ const showCustomIconPosition = ref(false);
 .demo-popup {
   .van-doc-demo-block__card {
     background-color: var(--mx-background-color-light);
-    padding: 0 15px;
   }
   .line {
     padding: 10px 0;

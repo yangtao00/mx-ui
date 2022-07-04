@@ -24,7 +24,6 @@ export const cellSharedProps = {
   value: numericProp,
   center: Boolean,
   isLink: Boolean,
-  border: truthProp,
   required: Boolean,
   iconPrefix: String,
   valueClass: unknownProp,
@@ -45,7 +44,7 @@ export type CellProps = ExtractPropTypes<typeof cellProps>;
 export default defineComponent({
   name,
   props: cellProps,
-  setup(props, { emit, slots }) {
+  setup(props, { slots }) {
     const route = useRoute();
 
     const renderLabel = () => {
@@ -89,14 +88,13 @@ export default defineComponent({
       }
     };
     return () => {
-      const { center, border, isLink, required } = props;
+      const { center, isLink, required } = props;
       const clickable = props.clickable ?? isLink;
 
       const classes: Record<string, boolean | undefined> = {
         center,
         required,
         clickable,
-        borderless: !border,
       };
 
       return (

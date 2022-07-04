@@ -2,13 +2,13 @@
 
 :root {
   --mx-action-sheet-max-height: @action-sheet-max-height;
-  --mx-action-sheet-header-color: action-sheet-header-color;
-  --mx-action-sheet-header-line-height: action-sheet-header-line-height;
-  --mx-action-sheet-header-font-size: action-sheet-header-font-size;
-  --mx-action-sheet-header-height: action-sheet-header-height;
+  --mx-action-sheet-header-color: @action-sheet-header-color;
+  --mx-action-sheet-header-line-height: @action-sheet-header-line-height;
+  --mx-action-sheet-header-font-size: @action-sheet-header-font-size;
+  --mx-action-sheet-header-height: @action-sheet-header-height;
   --mx-action-sheet-description-color: @action-sheet-description-color;
-  --mx-action-sheet-description-line-height: action-sheet-description-line-height;
-  --mxaction-sheet-description-font-size: action-sheet-description-font-size;
+  --mx-action-sheet-description-line-height: @action-sheet-description-line-height;
+  --mxaction-sheet-description-font-size: @action-sheet-description-font-size;
   --mx-action-sheet-description-max-line: @action-sheet-description-max-line;
   --mx-action-sheet-item-color: @action-sheet-item-color;
   --mx-action-sheet-item-background-color: @action-sheet-item-background-color;
@@ -38,19 +38,19 @@
     font-size: var(--mx-action-sheet-header-font-size);
     line-height: var(--mx-action-sheet-header-line-height);
     text-align: center;
-    padding-top: 12px;
+    padding: 12px 15px 0 15px;
   }
 
   &__description {
     color: var(--mx-action-sheet-description-color);
     font-size: var(--mx-action-sheet-description-font-size);
     line-height: var(--mx-action-sheet-description-line-height);
-    text-align: center;
     margin-bottom: 7px;
+    padding: 0 15px;
   }
   &__item,
   &__cancel {
-    padding: 0 13px;
+    padding: 0 15px;
     padding: 13px 0;
     width: 100%;
     font-size: var(--mx-action-sheet-cancel-font-size);

@@ -8,6 +8,7 @@
   --mx-cell-horizontal-right-padding: @cell-horizontal-right-padding;
   --mx-cell-title-font-size: @cell-title-font-size;
   --mx-cell-title-color: @cell-title-color;
+  --mx-cell-required-color: @cell-required-color;
   --mx-cell-title-line-height: @cell-title-line-height;
   --mx-cell-label-font-size: @cell-label-font-size;
   --mx-cell-label-color: @cell-label-color;
@@ -34,6 +35,27 @@
   &__value {
     flex: 1;
   }
+  &__label {
+    margin-top: var(--mx-cell-label-margin-top);
+    color: var(--mx-cell-label-color);
+    font-size: var(--mx-cell-label-font-size);
+    line-height: var(--mx-cell-label-line-height);
+  }
+  &--required {
+    span {
+      overflow: visible;
+      position: relative;
+      &::after {
+        position: absolute;
+        right: -10px;
+        padding-top: 3px;
+        color: var(--mx-cell-required-color);
+        font-size: var(--mx-cell-title-font-size);
+        content: '*';
+        height: 100%;
+      }
+    }
+  }
   &__value {
     position: relative;
     overflow: hidden;
@@ -41,16 +63,11 @@
     text-align: right;
     vertical-align: middle;
     word-wrap: break-word;
+    font-size: var(--mx-cell-value-font-size);
 
     &--alone {
       color: var(--mx-text-color);
       text-align: left;
     }
-  }
-  &__label {
-    margin-top: var(--mx-cell-label-margin-top);
-    color: var(--mx-cell-label-color);
-    font-size: var(--mx-cell-label-font-size);
-    line-height: var(--mx-cell-label-line-height);
   }
 }
