@@ -8,6 +8,9 @@ export default {
       publicPath: '/akc-ui/',
     },
     packageManager: 'pnpm',
+    extensions: {
+      esm: '.mjs',
+    },
   },
   site: {
     title: 'akc-ui',

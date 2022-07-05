@@ -2,8 +2,8 @@
   "name": "akc-ui",
   "version": "0.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/akc-ui.cjs.js",
+  "module": "es/index.mjs",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
   "files": [
@@ -22,7 +22,7 @@
     "lint": "vant-cli lint",
     "build": "vant-cli build",
     "release": "vant-cli release",
-    "preinstall": "npx only pnpm",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "build-site": "vant-cli build-site"
   },
