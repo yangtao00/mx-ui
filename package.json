@@ -22,6 +22,7 @@
     "lint": "vant-cli lint",
     "build": "vant-cli build",
     "release": "vant-cli release",
+    "preinstall": "npx only pnpm",
     "prepare": "husky install",
     "build-site": "vant-cli build-site"
   },

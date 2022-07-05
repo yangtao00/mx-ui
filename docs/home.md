@@ -2,4 +2,4 @@
 
 ### 关于
 
-基础 vue3.X + ts + vant-cli 的爱库存 UI 组件库
+基础 vue3.x + ts + vant-cli 的 UI 组件库

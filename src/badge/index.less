@@ -1,0 +1,70 @@
+@import './var.less';
+
+:root {
+  --mx-badge-size: @badge-size;
+  --mx-badge-dot-size: @badge-dot-size;
+  --mx-badge-color: @badge-color;
+  --mx-badge-padding: @badge-padding;
+  --mx-badge-font-size: @badge-font-size;
+  --mx-badge-font-weight: @badge-font-weight;
+  --mx-badge-background-color: @badge-background-color;
+}
+
+.mx-badge {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: var(--mx-badge-size);
+  padding: var(--mx-badge-padding);
+  color: var(--mx-badge-color);
+  font-weight: var(--mx-badge-font-weight);
+  font-size: var(--mx-badge-font-size);
+  font-family: var(--mx-badge-font-family);
+  line-height: 1.2;
+  text-align: center;
+  background: var(--mx-badge-background-color);
+  border-radius: var(--mx-border-radius-max);
+
+  &--fixed {
+    position: absolute;
+    transform-origin: 100%;
+  }
+
+  &--top-left {
+    top: 1px;
+    left: 1px;
+    transform: translate(-50%, -50%);
+  }
+
+  &--top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  &--bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+  }
+
+  &--dot {
+    width: var(--mx-badge-dot-size);
+    min-width: 0;
+    height: var(--mx-badge-dot-size);
+    background: var(--mx-badge-background-color);
+    border-radius: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

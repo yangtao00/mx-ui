@@ -1,3 +1,5 @@
+import { Numeric } from './basic';
+
 export const inBrowser = typeof window !== 'undefined';
 
 export const isDef = <T>(val: T): val is NonNullable<T> =>
@@ -21,3 +23,6 @@ export const isElement = (node: Element) => {
     node.nodeType === ELEMENT_NODE_TYPE
   );
 };
+
+export const isNumeric = (val: Numeric): val is string =>
+  typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
