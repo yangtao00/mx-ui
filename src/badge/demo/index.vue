@@ -9,16 +9,30 @@
     <mx-badge content="99">
       <div class="child" />
     </mx-badge>
+    <mx-badge content="22">
+      <div class="child" />
+    </mx-badge>
     <mx-badge content="Hot">
       <div class="child" />
     </mx-badge>
   </demo-block>
   <demo-block title="最大值">
-    <mx-badge :max="9" content="11">
+    <mx-badge :max="9" content="12">
       <div class="child" />
     </mx-badge>
     <mx-badge :max="99" content="101">
       <div class="child" />
+    </mx-badge>
+    <mx-badge :max="999" content="1001">
+      <div class="child" />
+    </mx-badge>
+  </demo-block>
+  <demo-block title="带边框">
+    <mx-badge content="11" border>
+      <div class="child" style="background-color: #ff4b00" />
+    </mx-badge>
+    <mx-badge color="#1989fa" content="11" border>
+      <div class="child" style="background-color: #1989fa" />
     </mx-badge>
   </demo-block>
   <demo-block title="自定义颜色">
@@ -31,26 +45,15 @@
   </demo-block>
   <demo-block title="自定义徽标内容">
     <mx-badge>
-      <div class="child" />
       <template #content>
         <div>x</div>
       </template>
+      <div class="child" />
     </mx-badge>
     <mx-badge>
-      <div class="child" />
       <template #content>
         <div>✔️</div>
       </template>
-    </mx-badge>
-  </demo-block>
-  <demo-block title="自定义徽标位置">
-    <mx-badge :content="10" position="top-left">
-      <div class="child" />
-    </mx-badge>
-    <mx-badge :content="10" position="bottom-left">
-      <div class="child" />
-    </mx-badge>
-    <mx-badge :content="10" position="bottom-right">
       <div class="child" />
     </mx-badge>
   </demo-block>
@@ -65,9 +68,18 @@ import MxBadge from '../index';
 <style lang="less">
 .demo-badge {
   background-color: var(--mx-background-color-light);
-
+  .van-doc-demo-block {
+    padding: 0 10px;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
+  }
   .mx-badge__wrapper {
-    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .child {

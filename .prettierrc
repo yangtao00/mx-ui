@@ -8,5 +8,6 @@
   "jsxBracketSameLine": true,
   "arrowParens": "avoid",
   "requirePragma": false,
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "ignore"
 }

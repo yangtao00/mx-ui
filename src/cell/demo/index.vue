@@ -34,10 +34,16 @@ import MxCellGroup from '../../cell-group';
 import MxCell from '..';
 </script>
 <style lang="less">
-.van-doc-demo-block {
-  padding: 0 10px;
-  .van-doc-demo-block__title {
-    padding-left: 0;
+.demo-cell {
+  .van-doc-demo-block {
+    padding: 0 10px;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
   }
 }
 </style>

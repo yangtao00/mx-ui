@@ -3,7 +3,7 @@ import _Badge from './Badge';
 
 export const Badge = withInstall(_Badge);
 export default Badge;
-export type { BadgeProps, BadgePosition } from './types';
+export type { BadgeProps } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

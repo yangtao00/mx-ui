@@ -111,22 +111,6 @@ app.use(Badge);
 }
 ```
 
-### 自定义徽标位置
-
-通过 `position` 属性来设置徽标的位置。
-
-```html
-<mx-badge :content="10" position="top-left">
-  <div class="child" />
-</mx-badge>
-<mx-badge :content="10" position="bottom-left">
-  <div class="child" />
-</mx-badge>
-<mx-badge :content="10" position="bottom-right">
-  <div class="child" />
-</mx-badge>
-```
-
 ### 独立展示
 
 当 Badge 没有子元素时，会作为一个独立的元素进行展示。
@@ -141,15 +125,15 @@ app.use(Badge);
 
 ### Props
 
-| 参数      | 说明                                                                        | 类型                                   | 默认值      |
-| --------- | --------------------------------------------------------------------------- | -------------------------------------- | ----------- |
-| content   | 徽标内容                                                                    | _number \| string_                     | -           |
-| color     | 徽标背景颜色                                                                | _string_                               | `#ff302d`   |
-| dot       | 是否展示为小红点                                                            | _boolean_                              | `false`     |
-| max       | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效                | _number \| string_                     | -           |
-| offset    | 设置徽标的偏移量，数组的两项分别对应水平和垂直方向的偏移量，默认单位为 `px` | _[number \| string, number \| string]_ | -           |
-| show-zero | 当 content 为数字 0 时，是否展示徽标                                        | _boolean_                              | `true`      |
-| position  | 徽标位置，可选值为 `top-left` `bottom-left` `bottom-right`                  | _string_                               | `top-right` |
+| 参数      | 说明                                                                        | 类型                                   | 默认值    |
+| --------- | --------------------------------------------------------------------------- | -------------------------------------- | --------- |
+| content   | 徽标内容                                                                    | _number \| string_                     | -         |
+| color     | 徽标背景颜色                                                                | _string_                               | `#ff302d` |
+| dot       | 是否展示为小红点                                                            | _boolean_                              | `false`   |
+| max       | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效                | _number \| string_                     | -         |
+| offset    | 设置徽标的偏移量，数组的两项分别对应水平和垂直方向的偏移量，默认单位为 `px` | _[number \| string, number \| string]_ | -         |
+| border    | 当徽标颜色和背景块颜色相近时，可以通过设置边框，来增加辨别度                | _boolean_                              | `false`   |
+| show-zero | 当 content 为数字 0 时，是否展示徽标                                        | _boolean_                              | `true`    |
 
 ### Slots
 
@@ -163,7 +147,7 @@ app.use(Badge);
 组件导出以下类型定义：
 
 ```ts
-import type { BadgeProps, BadgePosition } from 'ack-ui';
+import type { BadgeProps } from 'ack-ui';
 ```
 
 ## 注意事项

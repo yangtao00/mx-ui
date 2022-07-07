@@ -46,6 +46,9 @@
     padding: var(--mx-button-xlarge-padding);
     &.mx-button--round {
       border-radius: var(--mx-button-xlarge-border-radius);
+      &::after {
+        border-radius: calc(var(--mx-button-xlarge-border-radius) * 2);
+      }
     }
   }
 
@@ -55,6 +58,9 @@
     padding: var(--mx-button-large-padding);
     &.mx-button--round {
       border-radius: var(--mx-button-large-border-radius);
+      &::after {
+        border-radius: calc(var(--mx-button-large-border-radius) * 2);
+      }
     }
   }
 
@@ -64,6 +70,9 @@
     padding: var(--mx-button-medium-padding);
     &.mx-button--round {
       border-radius: var(--mx-button-medium-border-radius);
+      &::after {
+        border-radius: calc(var(--mx-button-medium-border-radius) * 2);
+      }
     }
   }
 
@@ -73,6 +82,9 @@
     padding: var(--mx-button-small-padding);
     &.mx-button--round {
       border-radius: var(--mx-button-small-border-radius);
+      &::after {
+        border-radius: calc(var(--mx-button-small-border-radius) * 2);
+      }
     }
   }
 
@@ -82,6 +94,9 @@
     padding: var(--mx-button-mini-padding);
     &.mx-button--round {
       border-radius: var(--mx-button-mini-border-radius);
+      &::after {
+        border-radius: calc(var(--mx-button-mini-border-radius) * 2);
+      }
     }
   }
 
@@ -151,9 +166,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    &::before {
-      content: ' ';
-    }
   }
 
   &--hairline {
@@ -161,13 +173,7 @@
 
     &::after {
       border-color: inherit;
-      border-radius: calc(var(--mx-button-border-radius) * 2);
     }
-
-    &.mx-button--round::after {
-      border-radius: var(--mx-button-round-border-radius);
-    }
-
     &.mx-button--square::after {
       border-radius: 0;
     }

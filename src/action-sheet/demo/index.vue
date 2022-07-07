@@ -46,9 +46,16 @@ const onSelect = (item: ActionSheetAction) => {
 };
 </script>
 <style lang="less">
-.van-doc-demo-block {
-  .mx-cell {
-    margin-bottom: 10px;
+.demo-action-sheet {
+  .van-doc-demo-block {
+    padding: 0 10px;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
   }
 }
 </style>

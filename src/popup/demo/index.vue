@@ -1,5 +1,5 @@
 <template>
-  <demo-block card title="基础用法">
+  <demo-block title="基础用法">
     <mx-cell @click="showBasic = true">展示弹窗层</mx-cell>
     <mx-popup v-model:show="showBasic" :style="{ padding: '30px 50px' }">
       内容
@@ -59,7 +59,7 @@
     />
   </demo-block>
 
-  <demo-block card title="圆角弹窗">
+  <demo-block title="圆角弹窗">
     <mx-cell @click="showRoundCorner = true">圆角弹窗</mx-cell>
     <mx-popup
       v-model:show="showRoundCorner"
@@ -69,7 +69,7 @@
     />
   </demo-block>
 
-  <demo-block card title="指定挂载节点">
+  <demo-block title="指定挂载节点">
     <mx-cell @click="showGetContainer = true">指定挂载节点</mx-cell>
     <mx-popup
       v-model:show="showGetContainer"
@@ -97,8 +97,15 @@ const showCustomIconPosition = ref(false);
 </script>
 <style lang="less">
 .demo-popup {
-  .van-doc-demo-block__card {
-    background-color: var(--mx-background-color-light);
+  .van-doc-demo-block {
+    padding: 0 10px;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
   }
   .line {
     padding: 10px 0;

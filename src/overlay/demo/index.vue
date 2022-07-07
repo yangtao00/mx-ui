@@ -3,7 +3,7 @@
     <mx-button
       type="primary"
       text="显示遮罩层"
-      style="margin-left: 16px"
+      style="margin-right: 16px"
       @click="show = true"
     />
     <mx-overlay :show="show" @click="show = false" />
@@ -12,7 +12,7 @@
     <mx-button
       type="primary"
       text="嵌入内容"
-      style="margin-left: 16px"
+      style="margin-right: 16px"
       @click="showEmbedded = true"
     />
     <mx-overlay :show="showEmbedded" @click="showEmbedded = false">
@@ -33,6 +33,16 @@ const showEmbedded = ref(false);
 <style lang="less">
 .demo-overlay {
   background: var(--mx-background-color-light);
+  .van-doc-demo-block {
+    padding: 0 10px;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
+  }
 
   .wrapper {
     display: flex;

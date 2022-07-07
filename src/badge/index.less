@@ -1,25 +1,28 @@
 @import './var.less';
 
 :root {
-  --mx-badge-size: @badge-size;
+  --mx-badge-base-size: @badge-base-size;
   --mx-badge-dot-size: @badge-dot-size;
+  --mx-badge-md-width: @badge-md-width;
+  --mx-badge-base-padding: @badge-base-padding;
   --mx-badge-color: @badge-color;
-  --mx-badge-padding: @badge-padding;
   --mx-badge-font-size: @badge-font-size;
   --mx-badge-font-weight: @badge-font-weight;
+  --mx-badge-line-height: @badge-line-height;
   --mx-badge-background-color: @badge-background-color;
+  --mx-badge-border: @badge-border;
 }
 
 .mx-badge {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
   box-sizing: border-box;
-  min-width: var(--mx-badge-size);
-  padding: var(--mx-badge-padding);
+  min-width: var(--mx-badge-base-size);
   color: var(--mx-badge-color);
+  padding: 0 var(--mx-badge-base-padding);
   font-weight: var(--mx-badge-font-weight);
   font-size: var(--mx-badge-font-size);
-  font-family: var(--mx-badge-font-family);
-  line-height: 1.2;
+  line-height: 15px;
   text-align: center;
   background: var(--mx-badge-background-color);
   border-radius: var(--mx-border-radius-max);
@@ -27,40 +30,28 @@
   &--fixed {
     position: absolute;
     transform-origin: 100%;
+    top: -6px;
+    left: calc(100% - 6px);
   }
 
-  &--top-left {
-    top: 1px;
-    left: 1px;
-    transform: translate(-50%, -50%);
-  }
-
-  &--top-right {
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%);
-  }
-
-  &--bottom-left {
-    bottom: 0;
-    left: 0;
-    transform: translate(-50%, 50%);
-  }
-
-  &--bottom-right {
-    bottom: 0;
-    right: 0;
-    transform: translate(50%, 50%);
+  &--border {
+    border: var(--mx-badge-border);
+    line-height: 13px;
   }
 
   &--dot {
-    width: var(--mx-badge-dot-size);
     min-width: 0;
+    width: var(--mx-badge-dot-size);
     height: var(--mx-badge-dot-size);
     background: var(--mx-badge-background-color);
     border-radius: 100%;
     border: none;
-    padding: 0;
+    top: -3px;
+    right: -3px;
+    left: auto;
+  }
+  &--md__width {
+    width: var(--mx-badge-md-width);
   }
 
   &__wrapper {

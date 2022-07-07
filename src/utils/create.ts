@@ -13,7 +13,7 @@ function genBem(name: string, mods?: Mods): string {
   }
   return Object.keys(mods).reduce(
     (ret, key) => ret + (mods[key] ? genBem(name, key) : ''),
-    ''
+    '',
   );
 }
 
@@ -27,6 +27,7 @@ export function createBEM(name: string) {
     return `${el}${genBem(el, mods)}`;
   };
 }
+
 export function createNamespace(name: string) {
   const prefixedName = `mx-${name}`;
   return [prefixedName, createBEM(prefixedName)] as const;

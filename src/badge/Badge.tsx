@@ -51,13 +51,22 @@ export default defineComponent({
       return style;
     });
 
+    const setWidth = () => {
+      const { dot, max } = props;
+      let { content } = props;
+      if (content && max && +content > max) content = max;
+      if (!dot && content && !isNaN(+content) && content > 9 && content <= 99) {
+        return 'md__width';
+      }
+    };
+
     const renderBadge = () => {
       if (hasContent() || props.dot) {
         return (
           <div
             class={bem([
-              props.position,
-              { dot: props.dot, fixed: !!slots.default },
+              { dot: props.dot, fixed: !!slots.default, border: props.border },
+              setWidth(),
             ])}
             style={style.value}
           >

@@ -1,4 +1,4 @@
-import { defineComponent, type ExtractPropTypes, CSSProperties } from 'vue';
+import { defineComponent, type ExtractPropTypes } from 'vue';
 import { createNamespace, makeStringProp, BORDER_SURROUND } from '../utils';
 
 import { ButtonSize, ButtonType } from './types';

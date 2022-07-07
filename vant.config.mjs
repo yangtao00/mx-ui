@@ -66,6 +66,10 @@ export default {
             path: 'badge',
             title: 'Badge 徽标',
           },
+          {
+            path: 'tag',
+            title: 'tag 标签',
+          },
         ],
       },
     ],

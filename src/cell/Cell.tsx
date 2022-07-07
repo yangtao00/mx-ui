@@ -3,7 +3,6 @@ import {
   extend,
   isDef,
   numericProp,
-  truthProp,
   unknownProp,
 } from '../utils';
 import {

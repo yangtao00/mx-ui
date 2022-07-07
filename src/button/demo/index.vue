@@ -37,7 +37,10 @@
   </demo-block>
   <demo-block title="细边框按钮">
     <div class="demo-button-row">
-      <mx-button type="plain" hairline>主按钮</mx-button>
+      <mx-button type="plain" size="large" hairline round>大按钮</mx-button>
+      <mx-button type="plain" size="medium" hairline round>正常</mx-button>
+      <mx-button type="plain" size="small" hairline round>小按钮</mx-button>
+      <mx-button type="plain" size="large" hairline>方形按钮</mx-button>
     </div>
   </demo-block>
 </template>
@@ -46,12 +49,16 @@ import MxButton from '../index';
 </script>
 <style lang="less">
 .demo-button {
-  background-color: #fff;
+  background: var(--mx-background-color-light);
   .van-doc-demo-block {
     padding: 0 10px;
-  }
-  .van-doc-demo-block__title {
-    padding: 10px 0;
+    .van-doc-demo-block__title {
+      padding: 10px 0;
+    }
+    .van-doc-demo-block__card {
+      margin: 0;
+      background-color: var(--mx-background-color-light);
+    }
   }
   .mx-button {
     margin: 0 10px 10px 0;
