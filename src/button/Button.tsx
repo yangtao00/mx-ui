@@ -9,7 +9,6 @@ export const buttonProps = {
   size: makeStringProp<ButtonSize>('medium'),
   type: makeStringProp<ButtonType>('default'),
   block: Boolean,
-  round: Boolean,
   square: Boolean,
   text: String,
   hairline: Boolean,
@@ -45,7 +44,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { type, size, block, disabled, round, square, hairline } = props;
+      const { type, size, block, disabled, square, hairline } = props;
 
       const classes = [
         bem([
@@ -53,7 +52,6 @@ export default defineComponent({
           size,
           {
             disabled,
-            round,
             square,
             block,
             hairline,

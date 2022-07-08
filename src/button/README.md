@@ -69,7 +69,6 @@ app.use(Button);
 | text     | 按钮文字                                                | _string_  | -         |
 | block    | 是否为块级元素                                          | _boolean_ | `false`   |
 | square   | 是否为方形按钮                                          | _boolean_ | `false`   |
-| round    | 是否为圆形按钮                                          | _boolean_ | `false`   |
 | disabled | 是否禁用按钮                                            | _boolean_ | `false`   |
 | hairline | 是否使用 0.5px 边框                                     | _boolean_ | `false`   |
 

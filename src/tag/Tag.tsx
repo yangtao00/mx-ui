@@ -47,52 +47,27 @@ export default defineComponent({
         {props.prefixText}
       </div>
     );
-    const renderCoupun = () => (
-      <div class={bem('coupon')}>
-        <div
-          class={[
-            bem([
-              props.size,
-              props.type,
-              {
-                square: props.square,
-                hairline: props.hairline,
-                border: props.borderColor,
-              },
-            ]),
-            { [BORDER_SURROUND]: props.hairline },
-          ]}
-          style={getStyle()}
-        >
-          {props.indicatorColor ? renderIndicator() : null}
-          {props.prefixText ? renderPrefixText() : null}
-          <div class={bem('text')}>{slots.default?.()}</div>
-        </div>
+    const renderCoupon = () => <div class={bem('coupon')}></div>;
+    return () => (
+      <div
+        class={[
+          bem([
+            props.size,
+            {
+              square: props.square,
+              hairline: props.hairline,
+              border: props.borderColor,
+            },
+          ]),
+          { [BORDER_SURROUND]: props.hairline },
+        ]}
+        style={getStyle()}
+      >
+        {props.type === 'coupon' ? renderCoupon() : null}
+        {props.indicatorColor ? renderIndicator() : null}
+        {props.prefixText ? renderPrefixText() : null}
+        <div class={bem('text')}>{slots.default?.()}</div>
       </div>
     );
-    return () =>
-      props.type === 'coupon' ? (
-        renderCoupun()
-      ) : (
-        <div
-          class={[
-            bem([
-              props.size,
-              props.type,
-              {
-                square: props.square,
-                hairline: props.hairline,
-                border: props.borderColor,
-              },
-            ]),
-            { [BORDER_SURROUND]: props.hairline },
-          ]}
-          style={getStyle()}
-        >
-          {props.indicatorColor ? renderIndicator() : null}
-          {props.prefixText ? renderPrefixText() : null}
-          <div class={bem('text')}>{slots.default?.()}</div>
-        </div>
-      );
   },
 });

@@ -1,30 +1,106 @@
 @import './var.less';
 
 :root {
-  --mx-tag-md-font-size: @tag-md-font-size;
-  --mx-tag-sm-font-size: @tag-sm-font-size;
-  --mx-tag-md-line-height: @tag-md-line-height;
-  --mx-tag-sm-line-height: @tag-sm-line-height;
-  --mx-tag-md-border-radius: @tag-md-border-radius;
-  --mx-tag-sm-border-radius: @tag-sm-border-radius;
-  --mx-tag-md-padding: @tag-md-padding;
-  --mx-tag-sm-padding: @tag-sm-padding;
+  --mx-tag-medium-font-size: @tag-medium-font-size;
+  --mx-tag-small-font-size: @tag-small-font-size;
+  --mx-tag-medium-line-height: @tag-medium-line-height;
+  --mx-tag-small-line-height: @tag-small-line-height;
+  --mx-tag-medium-border-radius: @tag-medium-border-radius;
+  --mx-tag-small-border-radius: @tag-small-border-radius;
+  --mx-tag-medium-padding: @tag-medium-padding;
+  --mx-tag-small-padding: @tag-small-padding;
   --mx-tag-base-border-width: @tag-base-border-width;
   --mx-tag-indicator-width: @tag-indicator-width;
   --mx-tag-indicator-height: @tag-indicator-height;
   --mx-tag-indicator-border-radius: @tag-indicator-border-radius;
   --mx-tag-indicator-margin-right: @tag-indicator-margin-right;
+  --mx-tag-copon-size: @tag-copon-size;
 }
-.mx-tag__coupon {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
+
 .mx-tag {
   position: relative;
   display: inline-flex;
   align-items: center;
   overflow: hidden;
+
+  &--small {
+    font-size: var(--mx-tag-small-font-size);
+    padding: 0 var(--mx-tag-small-padding);
+    border-radius: var(--mx-tag-small-border-radius);
+    .mx-tag__coupon {
+      &::before,
+      &::after {
+        transform: translateY(-50%) scale(0.5);
+      }
+      &::before {
+        left: calc(var(--mx-tag-copon-size) * -0.6);
+      }
+      &::after {
+        right: calc(var(--mx-tag-copon-size) * -0.6);
+      }
+    }
+    .mx-tag__coupon + .mx-tag__prefix {
+      padding-left: calc(2 * var(--mx-tag-small-padding));
+    }
+    .mx-tag__coupon + .mx-tag__prefix + .mx-tag__text {
+      padding-right: var(--mx-tag-small-padding);
+    }
+    .mx-tag__prefix {
+      padding: 0 var(--mx-tag-small-padding);
+      margin: 0 var(--mx-tag-small-padding) 0
+        calc(var(--mx-tag-small-padding) * -1);
+      height: 100%;
+      line-height: var(--mx-tag-small-line-height);
+    }
+    .mx-tag__text {
+      line-height: var(--mx-tag-small-line-height);
+    }
+    &.mx-tag--hairline {
+      &::after {
+        border-radius: calc(var(--mx-tag-small-border-radius) * 2);
+      }
+    }
+  }
+
+  &--medium {
+    font-size: var(--mx-tag-medium-font-size);
+    padding: 0 var(--mx-tag-medium-padding);
+    border-radius: var(--mx-tag-medium-border-radius);
+    .mx-tag__coupon {
+      &::before,
+      &::after {
+        width: var(--mx-tag-copon-size);
+        height: var(--mx-tag-copon-size);
+      }
+      &::before {
+        left: calc(var(--mx-tag-copon-size) * -0.6);
+      }
+      &::after {
+        right: calc(var(--mx-tag-copon-size) * -0.6);
+      }
+    }
+    .mx-tag__coupon + .mx-tag__prefix {
+      padding-left: calc(2 * var(--mx-tag-medium-padding));
+    }
+    .mx-tag__prefix {
+      padding: 0 var(--mx-tag-medium-padding);
+      line-height: var(--mx-tag-medium-line-height);
+      margin: 0 var(--mx-tag-medium-padding) 0
+        calc(var(--mx-tag-medium-padding) * -1);
+      height: 100%;
+    }
+    .mx-tag__coupon + .mx-tag__prefix + .mx-tag__text {
+      padding-right: var(--mx-tag-medium-padding);
+    }
+    .mx-tag__text {
+      line-height: var(--mx-tag-medium-line-height);
+    }
+    &.mx-tag--hairline {
+      &::after {
+        border-radius: calc(var(--mx-tag-medium-border-radius) * 2);
+      }
+    }
+  }
   &--border {
     &::before {
       position: absolute;
@@ -32,7 +108,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      border: 1px solid;
+      border: var(--mx-border-width-base) solid;
       border-color: inherit;
       border-radius: inherit;
       content: '';
@@ -40,61 +116,47 @@
     }
   }
 
-  &--small {
-    font-size: var(--mx-tag-sm-font-size);
-    padding: 0 var(--mx-tag-sm-padding);
-    border-radius: var(--mx-tag-sm-border-radius);
-    &.mx-tag--square {
-      border-radius: 0;
-    }
-    .mx-tag__prefix {
-      padding: 0 var(--mx-tag-sm-padding);
-      margin: 0 var(--mx-tag-sm-padding) 0 calc(var(--mx-tag-sm-padding) * -1);
-      height: 100%;
-      line-height: var(--mx-tag-sm-line-height);
-    }
-    .mx-tag__text {
-      line-height: var(--mx-tag-sm-line-height);
-    }
+  &__coupon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 2;
+    &::before,
     &::after {
-      border-radius: calc(var(--mx-tag-sm-border-radius) * 2);
+      position: absolute;
+      content: ' ';
+      pointer-events: none;
+      background: #fff;
+      border-width: var(--mx-border-width-base);
+      border-style: solid;
+      border-color: inherit;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: var(--mx-tag-copon-size);
+      height: var(--mx-tag-copon-size);
     }
   }
-
-  &--medium {
-    font-size: var(--mx-tag-md-font-size);
-    padding: 0 var(--mx-tag-md-padding);
-    border-radius: var(--mx-tag-md-border-radius);
-
-    &.mx-tag--square {
-      border-radius: 0;
-    }
-    .mx-tag__prefix {
-      padding: 0 var(--mx-tag-md-padding);
-      line-height: var(--mx-tag-md-line-height);
-      margin: 0 var(--mx-tag-md-padding) 0 calc(var(--mx-tag-md-padding) * -1);
-      height: 100%;
-    }
-    .mx-tag__text {
-      line-height: var(--mx-tag-md-line-height);
-    }
+  &--square {
+    border-radius: 0;
     &::after {
-      border-radius: calc(var(--mx-tag-md-border-radius) * 2);
+      border-radius: calc(2 * var(--mx-border-radius-small));
     }
   }
 
   &--hairline {
-    border-width: 0;
-    border-style: none;
     &::before {
-      border: 0;
+      opacity: 0;
+      border: none;
     }
-
     &::after {
       border-color: inherit;
     }
     &.mx-tag--square::after {
-      border-radius: 0;
+      border-radius: calc(2 * var(--mx-border-radius-sm));
     }
   }
   &__indicator {
