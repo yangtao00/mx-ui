@@ -70,6 +70,10 @@ export default {
             path: 'tag',
             title: 'tag 标签',
           },
+          {
+            path: 'notice-bar',
+            title: 'NoticeBar 通知栏',
+          },
         ],
       },
     ],

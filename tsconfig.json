@@ -10,7 +10,10 @@
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
     "allowJs": true,
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "paths": {
+      "..": ["src/*"]
+    }
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"],
   "exclude": ["node_modules"]

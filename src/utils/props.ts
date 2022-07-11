@@ -23,3 +23,13 @@ export const makeArrayProp = <T>() => ({
   type: Array as PropType<T[]>,
   default: () => [],
 });
+
+export const makeNumberProp = <T>(defaultVal: T) => ({
+  type: Number,
+  default: defaultVal,
+});
+
+export const makeNumericProp = <T>(defaultVal: T) => ({
+  type: numericProp,
+  default: defaultVal,
+});

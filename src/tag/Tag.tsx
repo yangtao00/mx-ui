@@ -53,6 +53,7 @@ export default defineComponent({
         class={[
           bem([
             props.size,
+            props.type,
             {
               square: props.square,
               hairline: props.hairline,

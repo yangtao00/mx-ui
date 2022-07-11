@@ -27,6 +27,9 @@
     font-size: var(--mx-tag-small-font-size);
     padding: 0 var(--mx-tag-small-padding);
     border-radius: var(--mx-tag-small-border-radius);
+    &.mx-tag--coupon {
+      padding: 0 calc(2 * var(--mx-tag-small-padding));
+    }
     .mx-tag__coupon {
       &::before,
       &::after {
@@ -39,16 +42,11 @@
         right: calc(var(--mx-tag-copon-size) * -0.6);
       }
     }
-    .mx-tag__coupon + .mx-tag__prefix {
-      padding-left: calc(2 * var(--mx-tag-small-padding));
-    }
-    .mx-tag__coupon + .mx-tag__prefix + .mx-tag__text {
-      padding-right: var(--mx-tag-small-padding);
-    }
     .mx-tag__prefix {
-      padding: 0 var(--mx-tag-small-padding);
+      padding: 0 var(--mx-tag-small-padding) 0
+        calc(var(--mx-tag-small-padding) * 2);
       margin: 0 var(--mx-tag-small-padding) 0
-        calc(var(--mx-tag-small-padding) * -1);
+        calc(var(--mx-tag-small-padding) * -2);
       height: 100%;
       line-height: var(--mx-tag-small-line-height);
     }
@@ -66,6 +64,9 @@
     font-size: var(--mx-tag-medium-font-size);
     padding: 0 var(--mx-tag-medium-padding);
     border-radius: var(--mx-tag-medium-border-radius);
+    &.mx-tag--coupon {
+      padding: 0 calc(2 * var(--mx-tag-medium-padding));
+    }
     .mx-tag__coupon {
       &::before,
       &::after {
@@ -79,18 +80,13 @@
         right: calc(var(--mx-tag-copon-size) * -0.6);
       }
     }
-    .mx-tag__coupon + .mx-tag__prefix {
-      padding-left: calc(2 * var(--mx-tag-medium-padding));
-    }
     .mx-tag__prefix {
-      padding: 0 var(--mx-tag-medium-padding);
+      padding: 0 var(--mx-tag-medium-padding) 0
+        calc(var(--mx-tag-medium-padding) * 2);
       line-height: var(--mx-tag-medium-line-height);
       margin: 0 var(--mx-tag-medium-padding) 0
-        calc(var(--mx-tag-medium-padding) * -1);
+        calc(var(--mx-tag-medium-padding) * -2);
       height: 100%;
-    }
-    .mx-tag__coupon + .mx-tag__prefix + .mx-tag__text {
-      padding-right: var(--mx-tag-medium-padding);
     }
     .mx-tag__text {
       line-height: var(--mx-tag-medium-line-height);

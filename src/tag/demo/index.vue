@@ -67,6 +67,32 @@
     >
       可领2张
     </mx-tag>
+    <mx-tag
+      text-color="#FF6600"
+      size="small"
+      border-color="#FF8800"
+      type="coupon"
+      prefix-text="券"
+      prefix-text-color="#FFB27C40"
+    >
+      可领2张
+    </mx-tag>
+    <mx-tag
+      text-color="#FF6600"
+      size="medium"
+      border-color="#FF8800"
+      type="coupon"
+    >
+      可领2张
+    </mx-tag>
+    <mx-tag
+      text-color="#FF6600"
+      size="small"
+      border-color="#FF8800"
+      type="coupon"
+    >
+      可领2张
+    </mx-tag>
   </demo-block>
 </template>
 <script lang="ts" setup>

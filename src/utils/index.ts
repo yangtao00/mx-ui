@@ -7,3 +7,4 @@ export * from './validate';
 export * from './props';
 export * from './interceptor';
 export * from './dom';
+export * from './raf';
