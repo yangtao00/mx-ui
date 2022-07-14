@@ -25,3 +25,5 @@ export function addUnit(value?: Numeric, unit = 'px'): string | undefined {
   }
   return undefined;
 }
+export const clamp = (num: number, min: number, max: number): number =>
+  Math.min(Math.max(num, min), max);

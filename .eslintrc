@@ -1,15 +1,14 @@
 {
   "root": true,
-  "extends": [
-    "@vant"
-  ],
+  "extends": ["@vant"],
   "rules": {
     "camelcase": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "import/no-duplicates": "off",
     "import/first": "off",
     "vue/no-ref-as-operand": "off",
-    "quotes": ["warn", "single"]
+    "quotes": ["warn", "single"],
+    "no-sequences": "off"
   },
   "overrides": [
     {

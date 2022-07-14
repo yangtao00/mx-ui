@@ -62,12 +62,24 @@ app.use(NoticeBar);
 />
 ```
 
-### 方形通告栏
+### 方形
 
-通过设置 `square` 属性来展示方形通告栏。
+通过设置 `square` 属性来展示方形。
 
 ```html
 <mx-notice-bar left-icon="x" square text="有两件商品已降价，点击查看" />
+```
+
+### 通知栏模式
+
+通知栏支持 `closeable` 和 `link` 两种模式。
+
+```html
+<!-- closeable 模式，在右侧显示关闭按钮 -->
+<mx-notice-bar mode="closeable">有两件商品已降价，点击查看！</mx-notice-bar>
+
+<!-- link 模式，在右侧显示链接箭头 -->
+<mx-notice-bar mode="link">有两件商品已降价，点击查看</mx-notice-bar>
 ```
 
 ### 自定义样式
@@ -86,6 +98,7 @@ app.use(NoticeBar);
 
 | 参数       | 说明                                                                       | 类型               | 默认值    |
 | ---------- | -------------------------------------------------------------------------- | ------------------ | --------- |
+| mode       | 通知栏模式，可选值为 `closeable` `link`                                    | _string_           | `''`      |
 | text       | 通知文本内容                                                               | _string_           | `''`      |
 | color      | 通知文本颜色                                                               | _string_           | `#ed6a0c` |
 | background | 滚动条背景                                                                 | _string_           | `#fffbe8` |

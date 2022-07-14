@@ -52,21 +52,6 @@ export default defineComponent({
       duration: 0,
     });
 
-    const onTransitionEnd = () => {
-      state.offset = wrapWidth;
-      state.duration = 0;
-
-      // wait for Vue to render offset
-      // using nextTick won't work in iOS14
-      raf(() => {
-        // use double raf to ensure animation can start
-        doubleRaf(() => {
-          state.offset = -contentWidth;
-          state.duration = (contentWidth + wrapWidth) / +props.speed;
-          emit('replay');
-        });
-      });
-    };
     const renderLeftIcon = () => {
       if (slots['left-icon']) {
         return slots['left-icon']();
@@ -84,11 +69,36 @@ export default defineComponent({
       return <div class={bem('right-icon')}></div>;
     };
 
+    const isAutoScrollable = () => {
+      if (!wrapRef.value || !contentRef.value || props.scrollable === false) {
+        return false;
+      }
+      const wrapRefWidth = useRect(wrapRef).width;
+      const contentRefWidth = useRect(contentRef).width;
+      return contentRefWidth > wrapRefWidth;
+    };
+
     const renderMarquee = () => {
       const ellipsis = props.scrollable === false && !props.wrapable;
       const style = {
         transform: state.offset ? `translateX(${state.offset}px)` : '',
         transitionDuration: `${state.duration}s`,
+      };
+      const isAutoPlay = isAutoScrollable();
+
+      const onTransitionEnd = () => {
+        state.offset = -contentWidth / 2 + wrapWidth;
+        state.duration = 0;
+        // wait for Vue to render offset
+        // using nextTick won't work in iOS14
+        raf(() => {
+          // use double raf to ensure animation can start
+          doubleRaf(() => {
+            state.offset = -contentWidth + wrapWidth;
+            state.duration = (contentWidth - wrapWidth) / +props.speed;
+            emit('replay');
+          });
+        });
       };
 
       return (
@@ -99,11 +109,19 @@ export default defineComponent({
             class={[bem('content'), { 'mx-ellipsis': ellipsis }]}
             onTransitionend={onTransitionEnd}
           >
-            {slots.default ? slots.default() : props.text}
+            <span style={{ marginRight: '30px' }}>
+              {slots.default ? slots.default() : props.text}
+            </span>
+            {isAutoPlay ? (
+              <span style={{ marginRight: '30px' }}>
+                {slots.default ? slots.default() : props.text}
+              </span>
+            ) : null}
           </div>
         </div>
       );
     };
+
     const reset = () => {
       const { delay, speed, scrollable } = props;
       const ms = isDef(delay) ? +delay * 1000 : 0;
@@ -119,15 +137,14 @@ export default defineComponent({
           return;
         }
 
-        const wrapRefWidth = useRect(wrapRef).width;
-        const contentRefWidth = useRect(contentRef).width;
-
+        const wrapRefWidth = Math.round(useRect(wrapRef).width);
+        const contentRefWidth = Math.round(useRect(contentRef).width);
         if (scrollable || contentRefWidth > wrapRefWidth) {
           doubleRaf(() => {
             wrapWidth = wrapRefWidth;
             contentWidth = contentRefWidth;
-            state.offset = -contentWidth;
-            state.duration = contentWidth / +speed;
+            state.offset = -contentWidth + wrapRefWidth;
+            state.duration = (contentWidth - wrapRefWidth) / +speed;
           });
         }
       }, ms);

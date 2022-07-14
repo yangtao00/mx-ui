@@ -29,6 +29,7 @@
 import { computed, ref } from 'vue';
 import MxActionSheet, { ActionSheetAction } from '..';
 import MxCell from '../../cell';
+import Toast from '../../toast';
 
 const showBasic = ref(false);
 const showCancel = ref(false);
@@ -42,7 +43,7 @@ const simpleActions = computed<ActionSheetAction[]>(() => [
 
 const onSelect = (item: ActionSheetAction) => {
   showBasic.value = false;
-  console.log(item.name);
+  Toast(item.name);
 };
 </script>
 <style lang="less">

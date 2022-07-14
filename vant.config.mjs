@@ -44,6 +44,10 @@ export default {
             path: 'popup',
             title: 'Popup 弹出层',
           },
+          {
+            path: 'toast',
+            title: 'Toast 轻提示',
+          },
         ],
       },
       {
@@ -56,6 +60,10 @@ export default {
           {
             path: 'action-sheet',
             title: 'ActionSheet 动作面板',
+          },
+          {
+            path: 'dialog',
+            title: 'Dialog 弹出框',
           },
         ],
       },
@@ -73,6 +81,10 @@ export default {
           {
             path: 'notice-bar',
             title: 'NoticeBar 通知栏',
+          },
+          {
+            path: 'swipe',
+            title: 'Swipe 轮播',
           },
         ],
       },
