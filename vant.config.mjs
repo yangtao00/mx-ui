@@ -2,7 +2,7 @@ export default {
   name: 'akc-ui',
   build: {
     css: {
-      preprocessor: 'less',
+      preprocessor: 'sass',
     },
     site: {
       publicPath: '/akc-ui/',
@@ -85,6 +85,10 @@ export default {
           {
             path: 'swipe',
             title: 'Swipe 轮播',
+          },
+          {
+            path: 'steps',
+            title: 'Steps 步骤条',
           },
         ],
       },
