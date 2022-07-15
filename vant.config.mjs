@@ -2,7 +2,7 @@ export default {
   name: 'akc-ui',
   build: {
     css: {
-      preprocessor: 'sass',
+      preprocessor: 'less',
     },
     site: {
       publicPath: '/akc-ui/',
